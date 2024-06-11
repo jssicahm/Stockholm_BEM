@@ -6,24 +6,30 @@
     border: 0;
     box-sizing:border-box;
 }
+
 li{
     list-style: none;
 }
+
 html{
     scroll-behavior: smooth;
 }
+
 a{
     display: block;
 }
+
 p a {
     display: inline;
 }
+
 img, svg{
     display: block;
     width: 100%;
     height: initial;
 }
-h1 , h2 , h3 , h4 , h5 , h6 , p , strong , em , mark , a{
+
+h1 , h2 , h3 , h4 , h5 , h6{
     font-size: inherit;
     font-style: inherit;
     font-weight: inherit;
@@ -31,6 +37,16 @@ h1 , h2 , h3 , h4 , h5 , h6 , p , strong , em , mark , a{
     text-decoration: none;
     background-color: inherit;
 }
+
+p , strong , em , mark , a{
+    font-size: inherit;
+    font-style: inherit;
+    font-weight: inherit;
+    color:inherit;
+    text-decoration: none;
+    background-color: inherit;
+}
+
 :root{
     font-size: 100%;
     --text-hover-color: #77875B;
@@ -100,11 +116,15 @@ body{
 
 .a{
     overflow: hidden;
-    transition: all .5s ease;
+    
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
 }
 
-.a:hover{
-    padding: 0 0 .4375rem 0;
+.a:hover .a__img{
+    transform: translateY(-0.5rem);
 }
 
 .a--twoRows{
@@ -116,14 +136,13 @@ body{
 }
 
 .a__img{
-    height: 100%;
-    transform: scale(1.03);
-    transition: all .5s ease;
-    
-}
+    width: 103%;
+    height: 103%;
 
-.a--rectangle:hover .a__img{
-    transform: scale(1.04);
+    /* No se utiliza la propiedad object-fit: cover 
+    para ser fiel al diseño original */
+
+    transition: all .5s ease;
 }
 
 /* FOOTER */
@@ -434,6 +453,3 @@ body{
         grid-row: 38 / 40;
     }
 }
-
-
-
